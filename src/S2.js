@@ -14,7 +14,7 @@ async function S2() {
   const browser = await puppeteer.launch({
     headless: false,
     ignoreHTTPSErrors: true,
-    slowMo: 30,
+    slowMo: 100,
     args: ['--window-size=800,600', '--disable-gpu', '--disable-features=IsolateOrigins,site-per-process', '--blink-settings=imagesEnabled=true'],
   })
   const page = await browser.newPage()
@@ -138,10 +138,8 @@ async function S2() {
 
       // Staff Lab Access needs work it looks like this is student lab
       if (user['Member Type'] === 'Staff' || user['Member Type'] === 'Lab Aide') {
-        await frame.waitForSelector('#\\36 1 > td:nth-child(3)')
-        await frame.click('#\\36 1 > td:nth-child(3)')
-        await frame.waitForSelector('#\\37 7 > td:nth-child(3)')
-        await frame.click('#\\37 7 > td:nth-child(3)')
+        await frame.waitForSelector('#\\37 3 > td:nth-child(3)')
+        await frame.click('#\\37 3 > td:nth-child(3)')
       }
       await page.waitForTimeout(300)
       await frame.click('#uparrow')
