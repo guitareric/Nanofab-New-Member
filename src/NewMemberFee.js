@@ -86,8 +86,6 @@ async function NewMemberFee() {
           await page.waitForTimeout(4000)
         }
       }
-    } else {
-      console.log(user['First Name'] + ' ' + user['Last Name'] + ' No Member Fee Required')
     }
   }
 
